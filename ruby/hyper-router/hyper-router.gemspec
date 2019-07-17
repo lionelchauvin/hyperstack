@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'hyper-store', HyperRouter::VERSION
   spec.add_development_dependency 'listen'
   spec.add_development_dependency 'mini_racer', '~> 0.2.6'
-  spec.add_development_dependency 'opal-rails', '~> 0.9.4'
+  spec.add_development_dependency 'opal-rails', '>= 1.1.2'
   spec.add_development_dependency 'parser'
   spec.add_development_dependency 'puma'
   spec.add_development_dependency 'rails', '>= 4.0.0'

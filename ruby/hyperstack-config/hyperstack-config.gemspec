@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'listen', '~> 3.0'  # for hot loader
   spec.add_dependency 'mini_racer', '~> 0.2.6'
-  spec.add_dependency 'opal', '>= 0.11.0', '< 0.12.0'
+  spec.add_dependency 'opal', '>= 1.0.0', '< 1.1.0'
   spec.add_dependency 'opal-browser', '~> 0.2.0'
   spec.add_dependency 'uglifier'
   spec.add_dependency 'websocket' # for hot loader
@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'chromedriver-helper'
-  spec.add_development_dependency 'opal-rails', '~> 0.9.4'
+  spec.add_development_dependency 'opal-rails', '>= 1.1.2'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'puma'
   spec.add_development_dependency 'rails', '>= 4.0.0'

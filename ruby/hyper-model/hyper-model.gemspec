@@ -41,7 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mysql2'
   spec.add_development_dependency 'opal-activesupport', '~> 0.3.1'
   spec.add_development_dependency 'opal-browser', '~> 0.2.0'
-  spec.add_development_dependency 'opal-rails', '~> 0.9.4'
+  spec.add_development_dependency 'opal-rails', '>= 1.1.2'
   spec.add_development_dependency 'parser'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'pry-rescue'

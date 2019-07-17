@@ -29,7 +29,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency 'libv8', '~> 7.3.492.27.1'
   spec.add_dependency 'method_source'
   spec.add_dependency 'mini_racer', '~> 0.2.6'
-  spec.add_dependency 'opal', '>= 0.11.0', '< 0.12.0'
+  spec.add_dependency 'opal', '>= 1.0.0', '< 1.1.0'
   spec.add_dependency 'parser', '>= 2.3.3.1'
   spec.add_dependency 'pry'
   spec.add_dependency 'rspec-rails'
@@ -42,7 +42,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'hyper-component', HyperSpec::VERSION
   spec.add_development_dependency 'opal-browser', '~> 0.2.0'
-  spec.add_development_dependency 'opal-rails', '~> 0.9.4'
+  spec.add_development_dependency 'opal-rails', '>= 1.1.2'
   spec.add_development_dependency 'pry-rescue'
   spec.add_development_dependency 'puma'
   spec.add_development_dependency 'rails', '>= 4.0.0'

@@ -23,15 +23,15 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'hyperstack-config', Hyperstack::Legacy::Store::VERSION
   spec.add_dependency 'hyper-state', Hyperstack::Legacy::Store::VERSION
-  spec.add_dependency 'opal', '>= 0.11.0', '< 0.12.0'
-  spec.add_development_dependency 'bundler'
+  spec.add_dependency 'opal', '>= 1.0.0', '< 1.1.0'
+  spec.add_development_dependency 'bundler', ['>= 1.17.3', '< 2.1']
   spec.add_development_dependency 'chromedriver-helper'
   spec.add_development_dependency 'hyper-component', Hyperstack::Legacy::Store::VERSION
   spec.add_development_dependency 'hyper-spec', Hyperstack::Legacy::Store::VERSION
   spec.add_development_dependency 'listen'
   spec.add_development_dependency 'mini_racer', '~> 0.2.6'
   spec.add_development_dependency 'opal-browser', '~> 0.2.0'
-  spec.add_development_dependency 'opal-rails', '~> 0.9.4'
+  spec.add_development_dependency 'opal-rails', '>= 1.1.2'
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'pry-rescue'
   spec.add_development_dependency 'puma'

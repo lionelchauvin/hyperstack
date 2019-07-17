@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'chromedriver-helper'
   spec.add_development_dependency 'hyper-model', Hyperstack::I18n::VERSION
   spec.add_development_dependency 'hyper-spec', Hyperstack::I18n::VERSION
-  spec.add_development_dependency 'opal-rails', '~> 0.9.4'
+  spec.add_development_dependency 'opal-rails', '>= 1.1.2'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'puma'
   spec.add_development_dependency 'rake', '~> 10.0'

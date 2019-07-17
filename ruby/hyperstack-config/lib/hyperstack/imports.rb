@@ -70,7 +70,7 @@ module Hyperstack
         elsif kind == :gem
           r = "require '#{value}' #{client_guard(render_on_server, render_on_client)}"
           puts "    #{r}"
-          "puts \"#{r}\"; #{r}"
+          Rails.env.production? ? r : "`console.log(\"#{r}\")`; #{r}"
         else
           generate_directive(:require, value, file, render_on_server, render_on_client)
         end

@@ -1,0 +1,20 @@
+FROM ruby:2.6.3-buster
+
+RUN apt-get update && apt-get install -y build-essential nodejs mariadb-client chromium chromium-sandbox libnss3-dev --fix-missing --no-install-recommends
+
+# Configure the main working directory. This is the base
+# directory used in any further RUN, COPY, and ENTRYPOINT
+# commands.
+WORKDIR /app
+
+# Copy the main application.
+COPY . ./
+
+COPY docker/docker-entrypoint.sh /usr/bin/
+RUN chmod u+x /usr/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+# configure bundler
+RUN gem install bundler
+
+CMD ./docker-entrypoint.sh

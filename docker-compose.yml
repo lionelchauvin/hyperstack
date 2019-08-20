@@ -1,0 +1,33 @@
+version: '3.2'
+volumes:
+  mysql-data:
+  mysql-run:
+services:
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    volumes:
+      - mysql-run:/var/run/mysqld/
+      - mysql-data:/var/lib/mysql/
+  test:
+    privileged: true
+    build:
+      context: .
+      dockerfile: docker/dockerfile
+    user: "${USER_UID}:${USER_GID}"
+    tty: true
+    environment:
+      - TERM=xterm-256color
+      - HOME=/app # important for bundler because it tries to check if / is writable
+      - BUNDLE_PATH=/app/.bundle
+      - BUNDLE_BIN=/app/.bundle/bin
+      - GEM_HOME=/app/.bundle
+      - CHROMEDRIVER_VERSION=76.0.3809.68
+      - MYSQL_TEST_DATABASE=hyper_mesh_test_db
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - mysql-run:/var/run/mysqld/

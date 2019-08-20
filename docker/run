@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if ! which docker-compose > /dev/null; then
+  echo "install docker"
+  sudo ./docker/install
+fi
+
+echo "
+USER_UID=$(id -u)
+USER_GID=$(id -g)
+" > .env
+
+docker-compose run -w "/app/ruby/hyper-model" test bundle exec $@

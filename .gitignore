@@ -1,0 +1,7 @@
+.bundle
+.env
+.cache
+.chromedriver-helper
+.gem
+.config
+.bash_history

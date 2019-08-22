@@ -30,7 +30,7 @@ describe 'callbacks', js: true do
           before_validation :update_permalink, on: :create
 
           def update_permalink
-            return unless self.permalink.present?
+            return if self.permalink.present?
             self.permalink = 'permalink' # fake
           end
         end

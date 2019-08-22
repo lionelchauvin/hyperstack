@@ -16,7 +16,7 @@ if [[ $@ =~ [[:space:]]ruby/([^/$]+) ]]; then
   module=${BASH_REMATCH[1]}
   workdir="ruby/$module/"
   cmd=${@//$workdir/} # remove workdir from @
-  cmd=${@//ruby\/$module/} # eg. rspec ruby/hyper-model => rspec
+  cmd=${cmd//ruby\/$module/} # eg. rspec ruby/hyper-model => rspec
 fi
 
 docker-compose run -w "/app/$workdir" test bundle exec $cmd

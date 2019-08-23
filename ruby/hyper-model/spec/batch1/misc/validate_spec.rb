@@ -103,6 +103,13 @@ RSpec::Steps.steps "validate and valid? methods", js: true do
     end.to be_falsy
   end
 
+  it "save without validate should save invalid record" do
+    expect_promise do
+      user = User.new(last_name: 'f**k')
+      user.save(validate: false).then { |result| user.new_record?}
+    end.to be_falsy
+  end
+
   it "the valid? method reacts to the model being saved" do
     evaluate_ruby do
       Validator.model.last_name = 'f**k'

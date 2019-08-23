@@ -12,40 +12,39 @@ describe 'callbacks', js: true do
     end
   end
 
-  describe 'before_validation update_permalink on create', js: true do
+  describe 'before_validation :callback_method on create', js: true do
     before(:each) do
       policy_allow_all
 
       isomorphic do
-        class ModelWithPermalink < ActiveRecord::Base
+        class ModelWithCallback < ActiveRecord::Base
 
           def self.build_tables
-            connection.create_table(:model_with_permalinks, force: true) do |t|
-              t.string :permalink, null: false
+            connection.create_table(:model_with_callbacks, force: true) do |t|
+              t.integer :call_count, default: 0
               t.timestamps
             end
             ActiveRecord::Base.public_columns_hash[name] = columns_hash
           end
 
-          before_validation :update_permalink, on: :create
+          before_validation :callback_method, on: :create
 
-          def update_permalink
-            return if self.permalink.present?
-            self.permalink = 'permalink' # fake
+          def callback_method
+            self.call_count += 1
           end
         end
       end
 
-      ModelWithPermalink.build_tables
+      ModelWithCallback.build_tables
     end
 
     it "should be called" do
       expect_promise do
-        model = ModelWithPermalink.new
+        model = ModelWithCallback.new
         model.save.then do
-          model.permalink.present?
+          model.call_count
         end
-      end.to be_truthy
+      end.to eq 1
     end
 
   end

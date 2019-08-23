@@ -494,7 +494,7 @@ module ReactiveRecord
             # if we get to here save the record and return true to keep it
             op = new_models.include?(record) ? :create_permitted? : :update_permitted?
 
-            record.check_permission_with_acting_user(acting_user, op).save(validate: true) || true
+            record.check_permission_with_acting_user(acting_user, op).save(validate: validate) || true
           end
 
           # if called from ServerDataCache then save and validate are both false, and we just return the

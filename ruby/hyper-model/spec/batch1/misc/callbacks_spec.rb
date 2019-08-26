@@ -14,7 +14,7 @@ describe 'callbacks', js: true do
 
   describe 'before_validation :callback_method on create', js: true do
     before(:each) do
-      policy_allow_all
+      policy_allows_all
 
       isomorphic do
         class ModelWithCallback < ActiveRecord::Base

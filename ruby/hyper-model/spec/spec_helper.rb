@@ -133,7 +133,7 @@ if RUBY_ENGINE != 'opal'
   require 'support/component_helpers'
   require 'selenium-webdriver'
 
-  def policy_allow_all
+  def policy_allows_all
     stub_const 'TestApplication', Class.new
     stub_const 'TestApplicationPolicy', Class.new
     TestApplicationPolicy.class_eval do

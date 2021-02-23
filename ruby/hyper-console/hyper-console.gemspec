@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'hyper-operation', Hyperloop::Console::VERSION
   spec.add_development_dependency 'hyper-store', Hyperloop::Console::VERSION
   spec.add_development_dependency 'hyperstack-config', Hyperloop::Console::VERSION
-  spec.add_development_dependency 'opal', '>= 1.0.0', '< 1.1.0'
+  spec.add_development_dependency 'opal', '>= 1.1.0', '< 1.2.0'
   spec.add_development_dependency 'opal-browser'
   spec.add_development_dependency 'opal-jquery'
   spec.add_development_dependency 'opal-rails', '>= 1.1.2'
